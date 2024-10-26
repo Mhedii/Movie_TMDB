@@ -15,10 +15,6 @@ const Navbar = () => {
           TMDB
         </Link>
 
-        <div className="flex-grow mx-4 hidden lg:block">
-          <SearchBar />
-        </div>
-
         <div className="flex items-center gap-6 text-blue-600 dark:text-white">
           <DarkModeToggle />
         </div>

@@ -5,10 +5,9 @@ import ThemeProvider from "@/components/ThemeProvider";
 export default function Home() {
   return (
     <div className="">
-      <ThemeProvider>
-        <Navbar />
-        <HomePage />
-      </ThemeProvider>
+      {/* <ThemeProvider> */}
+      <HomePage />
+      {/* </ThemeProvider> */}
     </div>
   );
 }
