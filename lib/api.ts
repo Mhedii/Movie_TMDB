@@ -1,3 +1,4 @@
+import { NextResponse } from "next/server";
 import axios from "axios";
 
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
@@ -61,3 +62,22 @@ export const fetchMovieRecommendations = async (
   });
   return response.data.results;
 };
+let watchlist: number[] = [];
+
+export async function POST(request: Request) {
+  const { id } = await request.json();
+  if (!watchlist.includes(id)) {
+    watchlist.push(id);
+  }
+  return NextResponse.json({ watchlist });
+}
+
+export async function DELETE(request: Request) {
+  const { id } = await request.json();
+  watchlist = watchlist.filter((movieId) => movieId !== id);
+  return NextResponse.json({ watchlist });
+}
+
+export async function GET() {
+  return NextResponse.json({ watchlist });
+}

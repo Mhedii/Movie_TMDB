@@ -15,8 +15,11 @@ const Navbar = () => {
           TMDB
         </Link>
 
-        <div className="flex items-center gap-6 text-blue-600 dark:text-white">
-          <DarkModeToggle />
+        <div className="flex gap-4">
+          <div className="flex items-center gap-6 text-blue-600 dark:text-white">
+            <DarkModeToggle />
+          </div>
+          <Link href={`/watchlist`}>WatchList</Link>
         </div>
       </div>
     </div>
