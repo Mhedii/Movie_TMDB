@@ -2,7 +2,6 @@
 
 import DarkModeToggle from "@/shared/DarkModeToggle";
 import Link from "next/link";
-import SearchBar from "../../hooks/SearchBar";
 
 const Navbar = () => {
   return (

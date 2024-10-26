@@ -18,7 +18,7 @@ const Rating: React.FC<RatingProps> = ({ rating }) => {
       return (
         <FaRegStarHalfStroke
           key={index}
-          className="h-5 w-5 bg-red-500 text-yellow-500"
+          className="h-5 w-5 -500 text-yellow-500"
         />
       );
     } else {

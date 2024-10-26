@@ -34,12 +34,11 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
       <div className="max-w-sm rounded overflow-hidden shadow-lg p-4 bg-white dark:bg-primary_gray flex flex-col h-full">
         <div className="relative w-full h-64">
           {" "}
-          {/* Set fixed height for image container */}
           <Image
             src={imgSrc}
             alt={movie.title}
             layout="fill"
-            objectFit="cover" // Ensure the image covers the area
+            objectFit="cover"
             className="rounded"
             onError={handleError}
             loading="lazy"

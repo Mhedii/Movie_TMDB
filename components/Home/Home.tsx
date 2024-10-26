@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
@@ -25,18 +26,8 @@ const HomePage: React.FC = () => {
     if (loading) return;
     setLoading(true);
 
-    // try {
-
-    //   const newMovies = await fetchPopularMovies(page);
-    //   setMovies((prev) => [...prev, ...newMovies]);
-    //   setHasMore(newMovies.length > 0);
-    //   setPage((prev) => prev + 1);
-    // } catch (error) {
-    //   console.error("Error fetching movies:", error);
-    // } finally {
-    //   setLoading(false);
-    // }
     try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       let newMovies: any;
 
       if (searching) {
@@ -56,10 +47,10 @@ const HomePage: React.FC = () => {
     }
   };
   const handleSearch = () => {
-    setMovies([]); // Clear previous results
-    setPage(1); // Reset page for new search
-    setSearching(query.length > 0); // Update searching state
-    fetchMovies(); // Fetch new search results
+    setMovies([]);
+    setPage(1);
+    setSearching(query.length > 0);
+    fetchMovies();
   };
   useEffect(() => {
     fetchMovies();

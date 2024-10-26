@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-// Adjust path as necessary
 import Image from "next/image";
 import useStore from "@/lib/store";
 

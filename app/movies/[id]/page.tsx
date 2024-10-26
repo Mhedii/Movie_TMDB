@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Image from "next/image";
 import axios from "axios";
 import Recommendations from "@/components/Recommendation";
 import { MovieDetail } from "@/hooks/type";
@@ -46,9 +45,7 @@ const MovieDetailPage = async ({ params }: { params: { id: string } }) => {
     <div className="container mx-auto p-4  min-h-screen">
       <MovieDetails movie={movie} />
 
-      <Recommendations
-        recommendations={await fetchRecommendations(params.id)}
-      />
+      <Recommendations recommendations={recommendations} />
     </div>
   );
 };
