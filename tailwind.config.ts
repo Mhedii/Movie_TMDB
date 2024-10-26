@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-
+import daisyui from "daisyui";
 const config: Config = {
   darkMode: "class",
   content: [
@@ -9,12 +9,21 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      // colors: {
+      //   background: "var(--background)",
+      //   foreground: "var(--foreground)",
+      // },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#0A2647",
+        primary_color_light: "#144272",
+        primary_color_light_2: "#205295",
+        primary_color_light_3: "#2C74B3",
+        accent: "#FCFFFD",
+        primary_gray: "#A0AAC0",
+        gray_light: "#DADADA",
       },
     },
   },
-  plugins: [],
+  plugins: [daisyui],
 };
 export default config;

@@ -1,3 +1,4 @@
+import Rating from "@/hooks/Rating";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -21,9 +22,12 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
   const handleError = () => {
     setImgSrc("/path/to/fallback-image.jpg"); // Replace with your fallback image path
   };
-
+  const truncatedOverview =
+    movie.overview.length > 100
+      ? `${movie.overview.substring(0, 100)}...`
+      : movie.overview;
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg p-4 bg-white">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg p-4 bg-white dark:bg-primary_gray">
       <Image
         src={imgSrc}
         alt={movie.title}
@@ -35,10 +39,12 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
       />
 
       <div className="mt-4">
-        <h2 className="font-bold text-xl">{movie.title}</h2>
+        <h2 className="font-bold text-xl dark:text-primary">{movie.title}</h2>
         <p className="text-gray-600">Release Date: {movie.release_date}</p>
-        <p className="text-gray-800 mt-2">{movie.overview}</p>
-        <p className="text-gray-500 mt-2">Rating: {movie.vote_average}</p>
+        <p className="text-gray-800 mt-2">{truncatedOverview}</p>
+        <div className="mt-2">
+          <Rating rating={movie.vote_average} />
+        </div>
       </div>
     </div>
   );

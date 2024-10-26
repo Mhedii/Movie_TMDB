@@ -25,3 +25,12 @@ body {
     text-wrap: balance;
   }
 }
+html {
+  --background: white; /* Light mode background */
+  --foreground: black; /* Light mode text */
+}
+
+html.dark {
+  --background: black; /* Dark mode background */
+  --foreground: white; /* Dark mode text */
+}
