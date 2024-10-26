@@ -31,6 +31,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
         height={450}
         className="rounded"
         onError={handleError}
+        loading="lazy"
       />
 
       <div className="mt-4">
